@@ -457,7 +457,25 @@
 			{
 				"buffer_size": 7052,
 				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/Http/Controllers/AjaxController.php",
+			"settings":
+			{
+				"buffer_size": 624,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "routes/web.php",
+			"settings":
+			{
+				"buffer_size": 4700,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -506,11 +524,13 @@
 	"expanded_folders":
 	[
 		"/C/xampp/htdocs/Cake",
+		"/C/xampp/htdocs/Cake/app",
 		"/C/xampp/htdocs/Cake/app/Http",
 		"/C/xampp/htdocs/Cake/app/Http/Controllers",
 		"/C/xampp/htdocs/Cake/resources",
 		"/C/xampp/htdocs/Cake/resources/views",
-		"/C/xampp/htdocs/Cake/resources/views/Page"
+		"/C/xampp/htdocs/Cake/resources/views/Page",
+		"/C/xampp/htdocs/Cake/routes"
 	],
 	"file_history":
 	[
@@ -707,7 +727,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -723,18 +743,78 @@
 						"selection":
 						[
 							[
-								1114,
-								1114
+								244,
+								40
 							]
 						],
 						"settings":
 						{
+							"auto_complete": false,
 							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 333.0,
+						"translation.y": 627.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/Http/Controllers/AjaxController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 624,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								68,
+								68
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 171.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "routes/web.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4700,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1980,
+								1980
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2679.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
