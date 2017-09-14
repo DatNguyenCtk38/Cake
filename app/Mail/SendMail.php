@@ -42,6 +42,6 @@ class SendMail extends Mailable
     {
         //print_r($this->listBillDetail);
         //die();
-        return $this->view('mail',compact('listBillDetail','name','phoneNumber','address','create_at','total'))->to($this->mail)->from('datnguyenctk40@gmail.com','Yasuo')->subject('Đơn đặt hàng của bạn');
+        return $this->view('Page.mail',compact('listBillDetail','name','phoneNumber','address','create_at','total'))->to($this->mail)->from('datnguyenctk40@gmail.com','Yasuo')->subject('Đơn đặt hàng của bạn');
     }
 }

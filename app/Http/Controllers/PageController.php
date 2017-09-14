@@ -20,27 +20,27 @@ use App\Mail\SendMail;
 class PageController extends Controller
 {
     public function getIndex(){
-    	$slide = Slide::all();
-    	$new_product = Product::where('new',1)->paginate(4);
-    	$promotion_product = Product::where('promotion_price','<>',0)->paginate(8);
-    	//print_r($new_product);
+    	
+    	$promotion_product = Product::where('promotion_price','<>',0)->paginate(6);
+        $top3Crepe = Product::where('id_type',4)->take(9)->get();
+       
+    	//print_r($top3Crepe);
     	//die();
     	//return view('page.trangchu',['slide'=>$slide]);
-    	return view('page.trangchu',compact('slide','new_product','promotion_product'));
+    	return view('page.trangchu',compact('top3Crepe','promotion_product'));
     }
     public function getLoaiSp($type){
-        $sp_theoloai = Product::where('id_type',$type)->get();
-        $sp_khac = Product::where('id_type','<>',$type)->paginate(3);
-        $loai = ProductType::all();
+        $sp_theoloai = Product::where('id_type',$type)->paginate(9);
+       
         $loai_sp = ProductType::where('id',$type)->first();
         //print_r($loai_sp);
         //die();
-    	return view('page.loaisanpham',compact('sp_theoloai','sp_khac','loai','loai_sp'));
+    	return view('page.loaisanpham',compact('sp_theoloai','loai_sp'));
     }
     public function getChiTietSanPham(Request $req){
-        $sanpham = Product::where('id',$req->id)->first();
-        $sanphamtuongtu = Product::where('id_type',$sanpham->id_type)->paginate(6);
-    	return view('page.chitietsanpham',compact('sanpham','sanphamtuongtu'));
+        $product = Product::where('id',$req->id)->first();
+        $relateProduct = Product::where('id_type',$product->id_type)->paginate(8);
+    	return view('page.chitietsanpham',compact('product','relateProduct'));
     }
     public function getLienHe(){
     	return view('page.lienhe');

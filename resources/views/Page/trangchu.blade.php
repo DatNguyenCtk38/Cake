@@ -1,203 +1,352 @@
 @extends('master')
-@section('content') 
-<div class="fullwidthbanner-container">
-					<div class="fullwidthbanner">
-						<div class="bannercontainer" >
-					    <div class="banner" >
-								<ul>
-								@foreach($slide as $sl)
-									<!-- THE FIRST SLIDE -->
-									<li data-transition="boxfade" data-slotamount="20" class="active-revslide" style="width: 100%; height: 100%; overflow: hidden; z-index: 18; visibility: hidden; opacity: 0;">
-						            <div class="slotholder" style="width:100%;height:100%;" data-duration="undefined" data-zoomstart="undefined" data-zoomend="undefined" data-rotationstart="undefined" data-rotationend="undefined" data-ease="undefined" data-bgpositionend="undefined" data-bgposition="undefined" data-kenburns="undefined" data-easeme="undefined" data-bgfit="undefined" data-bgfitend="undefined" data-owidth="undefined" data-oheight="undefined">
-													<div class="tp-bgimg defaultimg" data-lazyload="undefined" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" data-lazydone="undefined" src="public/source/image/slide/{{$sl->image}}" data-src="public/source/image/slide/{{$sl->image}}" style="background-color: rgba(0, 0, 0, 0); background-repeat: no-repeat; background-image: url('public/source/image/slide/{{$sl->image}}'); background-size: cover; background-position: center center; width: 100%; height: 100%; opacity: 1; visibility: inherit;">
-													</div>
-												</div>
+@section('content')
+<div class="content-main-inner row-fluid">
+<div class="span12">
+        <div id="system-message-container">
+        </div>
+    </div>
+    <div id="position-3" class="span12">
+        <!--<div class="yt-position-inner">-->
+        <div class="module">
+            <div class="modcontent clearfix">
+            
+                <div id="sj_extraslider_4184451341504586970" class="sj-extraslider slide  extra-resp01-3 extra-resp02-3 extra-resp03-2 extra-resp04-1" data-interval="3000" data-pause="hover"><!--<![endif]-->
+                    <div class="heading-title">Best Sales</div><!--end heading-title-->
+                    <div class="extraslider-control  ">
+                        <!--<a class="button-prev" href="/templates/joomla3/sj-bakery/" data-jslide="prev"></a>-->
+                        <ul class="nav-page">
+                            <li class="page">
+                                <a class="button-page" href="#sj_extraslider_4184451341504586970" data-jslide="0"></a>
+                            </li>
+                            <li class="page">
+                                <a class="button-page sel" href="#sj_extraslider_4184451341504586970" data-jslide="1"></a>
+                            </li>
+                            <li class="page">
+                                <a class="button-page" href="#sj_extraslider_4184451341504586970" data-jslide="2"></a>
+                            </li>
+                        </ul>
+                        <!--<a class="button-next" href="/templates/joomla3/sj-bakery/" data-jslide="next"></a>-->
+                    </div>
+                    <div class="extraslider-inner">
+                      @php
+                        $i = 0;
+                    @endphp
+                     @foreach ($top3Crepe as $product)
+                   
+                    @php
+                        if($i%3==0)
+                        {
+                            if($i ==0) echo '<div class="item active ">
+                                  <div class="line">';
+                            else
+                                echo '<div class="item ">
+                                  <div class="line">';
+                        }
+                    @endphp
+                        
+                           
+                                <div class="item-wrap style2">
+                                    <div class="item-wrap-inner">
+                                        <div class="item-image">
+                                            <a href="{!!url('chi-tiet-san-pham/'.$product->id.'-'.$product->slug)!!}" title="Fate rinus late">
+                                                <span class="item-image">
+                                                    <span class="border-img"></span>
+                                                    <span class="zoom-img"></span>
 
-						        </li>
-						        @endforeach
-								</ul>
-							</div>
-						</div>
+                                                    <img style="width: 250px; height: 200px" src="public/source/images/stories/virtuemart/product/{{ $product->image }}" alt="Fate rinus late" title="Fate rinus late">                                    
+                                                </span></a></div>
 
-						<div class="tp-bannertimer"></div>
-					</div>
-				</div>
-				<!--slider-->
-	</div>
-	<div class="container">
-		<div id="content" class="space-top-none">
-			<div class="main-content">
-				<div class="space60">&nbsp;</div>
-				<div class="row">
-					<div class="col-sm-12">
-						<div class="beta-products-list">
-							<h4>Sản phẩm mới</h4>
-							<div class="beta-products-details">
-								<p class="pull-left">Tìm thấy {{count($new_product)}} sản phẩm</p>
-								<div class="clearfix"></div>
-							</div>
+                                        <div class="item-info">
+                                            <div class="item-title">
+                                                <a href="{!!url('chi-tiet-san-pham/'.$product->id.'-'.$product->slug)!!}" title="Fate rinus late">
+                                                   {{ $product->name }}
+                                                    </a>
+                                            </div>
 
-							<div class="row">
-								@foreach($new_product as $new)
-								<div class="col-sm-3">
-									<div class="single-item">
-									@if($new->promotion_price!=0)
-										<div class="ribbon-wrapper"><div class="ribbon sale">Sale</div></div>
-									@endif
-										<div class="single-item-header">
-											
-											
-											<a href="{!!url('chi-tiet-san-pham/'.$new->id.'-'.$new->description)!!}"><img height="200px" width="300px" src="public/source/image/product/{{$new->image}}" alt=""></a>
-										</div>
-										<div class="single-item-body">
-											<p class="single-item-title">{{$new->name}}</p>
-											<p class="single-item-price">
-												@if($new->promotion_price==0)
-													<span class="flash-sale">{{$new->unit_price}}</span>
-												@else
-													<span class="flash-del">{{$new->unit_price}}</span>
-													<span class="flash-sale">{{$new->promotion_price}}</span>
-												@endif
-											</p>
-										</div>
-										<div class="single-item-caption">
-											<!--<a class="add-to-cart pull-left" onclick="addcart(@php
-												$new->id;
-											@endphp)" href="{{route('themgiohang',$new->id)}}"><i class="fa fa-shopping-cart"></i></a>-->
-											<button id="addtocart" class="add-to-cart pull-left" onclick="addcart(@php
-												echo $new->id;
-											@endphp)"\>
-											</button>
-											<a class="beta-btn primary" href="{{route('chitietsanpham',$new->id)}}">Details <i class="fa fa-chevron-right"></i></a>
-											<div class="clearfix"></div>
-										</div>
-									</div>
-								</div>
-								@endforeach
-								<div style="padding-left: 30px;padding-right: 30px" class="row">{{$new_product->links()}}</div>
-							</div>
-						</div> <!-- .beta-products-list -->
+                                            <div class="item-content">
 
-						<div class="space50">&nbsp;</div>
+                                                <div class="item-description">
+                                                    <p>{{ $product->slug }}</p>
+                                                    </div>
 
-						<div class="beta-products-list">
-							<h4>Sản phẩm khuyến mãi</h4>
-							<div class="beta-products-details">
-								<p class="pull-left">Tìm thấy {{count($promotion_product)}} sản phẩm</p>
-								<div class="clearfix"></div>
-							</div>
-							<div class="row">
-								@foreach($promotion_product as $promotion)
-								<div class="col-sm-3">
-									<div class="single-item">
-										<div class="single-item-header">
-											<a href="{{route('chitietsanpham',$promotion->id)}}"><img height="200px" width="300px" src="public/source/image/product/{{$promotion->image}}" alt=""></a>
-										</div>
-										<div class="single-item-body">
-											<p class="single-item-title">{{$promotion->name}}</p>
-											<p class="single-item-price">
-												@if($promotion->promotion_price==0)
-												<span class="flash-del">{{number_format($promotion->unit_price)}} đồng </span>
-												@else
-												<span class="flash-del">{{number_format($promotion->unit_price)}} đồng </span>
-												<span class="flash-sale">{{number_format($promotion->promotion_price)}} đồng</span>
-												@endif
-											</p>
-										</div>
-										<div class="single-item-caption">
-											<a class="add-to-cart pull-left" href="{{route('themgiohang',$promotion->id)}}"><i class="fa fa-shopping-cart"></i></a>
-											<a class="beta-btn primary" href="{{route('chitietsanpham',$promotion->id)}}">Details <i class="fa fa-chevron-right"></i></a>
-											<div class="clearfix"></div>
-										</div>
-									</div>
-								</div>
-								@endforeach()
-								<div style="padding-left: 30px;padding-right: 30px" class="row">{{$promotion_product->links()}}</div>
-							</div>
-							<div class="space40">&nbsp;</div>
-							<div class="row">
-								<div class="col-sm-3">
-									<div class="single-item">
-										<div class="single-item-header">
-											<a href="product.html"><img src="public/source/assets/dest/images/products/1.jpg" alt=""></a>
-										</div>
-										<div class="single-item-body">
-											<p class="single-item-title">Sample Woman Top</p>
-											<p class="single-item-price">
-												<span>$34.55</span>
-											</p>
-										</div>
-										<div class="single-item-caption">
-											<a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
-											<a class="beta-btn primary" href="product.html">Details <i class="fa fa-chevron-right"></i></a>
-											<div class="clearfix"></div>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="single-item">
-										<div class="ribbon-wrapper"><div class="ribbon sale">Sale</div></div>
+                                                <div class="item-price">
+                                                    <div class="PricesalesPrice vm-display vm-price-value">
+                                                    <span class="vm-price-desc">Giá: 
+                                                    </span>
+                                                    <span 
+                                                     @if ($product->promotion_price > 0)
+                                                            style="text-decoration: line-through;" 
+                                                        @endif
+                                                    class="PricesalesPrice">{{number_format($product->unit_price) }} ₫
+                                                    </span><br>
+                                                    @if ($product->promotion_price == 0)
+                                                          
+                                                    <br>
+                                                    <span hidden="hidden" class="vm-price-desc">Khuyến mãi: </span>
+                                                    <span hidden="hidden" class="PricesalesPrice">{{number_format($product->promotion_price) }} ₫
+                                                    </span>
+                                                    @else
+                                                    <span  class="vm-price-desc">Promotion Price: </span>
+                                                    <span  class="PricesalesPrice">{{number_format($product->promotion_price) }} ₫</span>
+                                                    @endif
+                                                    </div></div>
+                                                <div class="addtocard-readmore">
+                                                    <div class="item-readmore">
+                                                        <a class="button1" href="index.php/fruits-cake/fate-rinus-late-detail.html" title="Fate rinus late">
+                                                           Chi tiết
+                                                        </a>
+                                                    </div></div>
+                                                <div class="item-addtocart">
 
-										<div class="single-item-header">
-											<a href="product.html"><img src="public/source/assets/dest/images/products/2.jpg" alt=""></a>
-										</div>
-										<div class="single-item-body">
-											<p class="single-item-title">Sample Woman Top</p>
-											<p class="single-item-price">
-												<span class="flash-del">$34.55</span>
-												<span class="flash-sale">$33.55</span>
-											</p>
-										</div>
-										<div class="single-item-caption">
-											<a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
-											<a class="beta-btn primary" href="product.html">Details <i class="fa fa-chevron-right"></i></a>
-											<div class="clearfix"></div>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="single-item">
-										<div class="single-item-header">
-											<a href="product.html"><img src="public/source/assets/dest/images/products/3.jpg" alt=""></a>
-										</div>
-										<div class="single-item-body">
-											<p class="single-item-title">Sample Woman Top</p>
-											<p class="single-item-price">
-												<span>$34.55</span>
-											</p>
-										</div>
-										<div class="single-item-caption">
-											<a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
-											<a class="beta-btn primary" href="product.html">Details <i class="fa fa-chevron-right"></i></a>
-											<div class="clearfix"></div>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="single-item">
-										<div class="single-item-header">
-											<a href="product.html"><img src="public/source/assets/dest/images/products/3.jpg" alt=""></a>
-										</div>
-										<div class="single-item-body">
-											<p class="single-item-title">Sample Woman Top</p>
-											<p class="single-item-price">
-												<span>$34.55</span>
-											</p>
-										</div>
-										<div class="single-item-caption">
-											<a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
-											<a class="beta-btn primary" href="product.html">Details <i class="fa fa-chevron-right"></i></a>
-											<div class="clearfix"></div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div> <!-- .beta-products-list -->
-					</div>
-				</div> <!-- end section with sidebar and main content -->
+                                                    <div class="addtocart-area">
+                                                        <form method="post" class="product js-recalculate" action="#">
+
+                                                            <div class="addtocart-bar">
+                                                                <span class="addtocart-button">
+                                                                    <input type="button" style="color: white" id="addtocart" name="addtocart" class="addtocart-button" value="Giỏ hàng" onclick="addcart(@php echo $product->id;@endphp)"
+                                                                    >
+                                                                    
+                                                                </span> 							<!-- <label for="quantity17" class="quantity_box">Quantity: </label> -->
+                                                                <span class="quantity-box">
+                                                                    <input type="text" class="quantity-input js-recalculate" name="quantity[]" onblur="Virtuemart.checkQuantity(this, 1, 'You can buy this product only in multiples of %s pieces!');" onclick="Virtuemart.checkQuantity(this, 1, 'You can buy this product only in multiples of %s pieces!');" onchange="Virtuemart.checkQuantity(this, 1, 'You can buy this product only in multiples of %s pieces!');" onsubmit="Virtuemart.checkQuantity(this, 1, 'You can buy this product only in multiples of %s pieces!');" value="1" data-init="1" data-step="1">
+                                                                </span>
+                                                                <span class="quantity-controls js-recalculate">
+                                                                    <input type="button" class="quantity-controls quantity-plus" value="plus">
+                                                                    <input type="button" class="quantity-controls quantity-minus" value="minus">
+                                                                </span>
 
 
-			</div> <!-- .main-content -->
-		</div> <!-- #content -->
-		@endsection
-		
+                                                                <input type="hidden" name="virtuemart_product_id[]" value="17">
+                                                                <noscript>&lt;input type="hidden" name="task" value="add"/&gt;</noscript> 
+                                                            </div>			<input type="hidden" name="option" value="com_virtuemart">
+                                                            <input type="hidden" name="view" value="cart">
+                                                            <input type="hidden" name="virtuemart_product_id[]" value="17">
+                                                            <input type="hidden" class="pname" value="Fate rinus late">
+                                                            <input type="hidden" name="Itemid" value="435">		</form>
+
+                                                    </div>
+
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                    @php
+                        $i++;
+                        if($i%3==0)
+                        {
+                            echo '</div>
+                                  </div>';
+                        }
+                    @endphp   
+                            
+
+                     @endforeach
+                        
+                    </div>
+                    <!--end extraslider-inner -->
+                </div>
+                <script>
+                    //<![CDATA[
+                    jQuery(document).ready(function ($) {
+                        ;
+                        (function (element) {
+                            var $element = $(element);
+
+                            if (typeof Virtuemart !== 'undefined') {
+                                Virtuemart.addtocart_popup = "1";
+                                usefancy = "1";
+                                vmLang = "";
+                                window.vmSiteurl = "index.html";
+                            }
+
+                            $element.each(function () {
+                                var $this = $(this), options = options = !$this.data('modal') && $.extend({}, $this.data());
+                                $this.jcarousel(options);
+                                $this.bind('jslide', function (e) {
+                                    var index = $(this).find(e.relatedTarget).index();
+                                    // process for nav
+                                    $('[data-jslide]').each(function () {
+                                        var $nav = $(this), $navData = $nav.data(), href, $target = $($nav.attr('data-target') || (href = $nav.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, ''));
+                                        if (!$target.is($this))
+                                            return;
+                                        if (typeof $navData.jslide == 'number' && $navData.jslide == index) {
+                                            $nav.addClass('sel');
+                                        } else {
+                                            $nav.removeClass('sel');
+                                        }
+                                    });
+                                });
+                                $this.touchSwipeLeft(function () {
+                                    $this.jcarousel('next');
+                                }
+                                );
+                                $this.touchSwipeRight(function () {
+                                    $this.jcarousel('prev');
+                                }
+                                );
+                                return;
+                            });
+
+                        })('#sj_extraslider_4184451341504586970');
+                    });
+                    //]]>
+                </script>
+            </div>
+        </div>
+        <div class="module free-shipping blank">
+            <!--<div class="wrap-title">-->
+            <h3 class="modtitle">Free Shipping</h3>
+            <!--</div>-->
+            <div class="modcontent clearfix">
+                on orders over $99. This offer is valid on all our store items
+            </div>
+
+
+        </div>
+        <div id="yt_component" class="span12">
+        <div class="component-inner">
+            <div class="component-inner2">
+                <div class="browse-view">
+                    <form action="/templates/joomla3/sj-bakery/index.php/specialty-cake" method="get">
+                        <div class="virtuemart_search">
+                            <br>
+                                <input name="keyword" class="inputbox" type="text" size="20" value="">
+                                <input type="submit" value="Search in shop" class="button" onclick="this.form.keyword.focus();">
+                        </div>
+                                <input type="hidden" name="search" value="true">
+                                <input type="hidden" name="view" value="category">
+                    </form>
+                        <!-- End Search Box -->
+                      <h1>Valentine Cake</h1>
+                          @php
+                            $i = 0;
+                          @endphp
+                        @foreach ($promotion_product as $product)
+                        @php
+                        if($i%2==0)
+                        {
+                            echo '<div class="row">';
+                            echo '<div class="product  span6 vertical-separator">';
+                        }
+                        else{
+                             echo '<div class="product  span6">';
+                        }
+                        @endphp
+                        
+                            
+                                
+                                <div class="spacer">
+                                    <div class="floatleft center image-product">
+                                        <a title="index.php?option=com_virtuemart&amp;view=productdetails&amp;virtuemart_product_id=54&amp;virtuemart_category_id=9" rel="vm-additional-images" href="{!!url('chi-tiet-san-pham/'.$product->id.'-'.$product->slug)!!}">
+                                            <span class="item-image">
+                                                <span class="border-img"></span>
+                                                <span class="zoom-img"></span>
+                                                <img style="height: 150px; width: 225px" src="public/source/images/stories/virtuemart/product/{{ $product->image }}" alt="v57" class="browseProductImage">                     </span>
+                                            </a>
+                                        </div>
+                                        <div class="info-product">
+                                            <h2><a href="{!!url('chi-tiet-san-pham/'.$product->id.'-'.$product->slug)!!}">{{ $product->name }}</a></h2>
+                                            <div class="product-price marginbottom12" id="productPrice54">
+                                                <div class="PricesalesPrice vm-display vm-price-value"><span class="vm-price-desc">Giá: </span><span class="PricesalesPrice">{{ number_format($product->unit_price )  }} ₫</span></div>
+                                            </div>
+                                            <p class="product_s_desc">
+                                                Makin zaten gravida eros quis justo sed nonummy...
+                                            </p>
+                                                <div class="btn-action clearfix">
+                                                    <div class="wrap-button">
+                                                        <a href="{!!url('chi-tiet-san-pham/'.$product->id.'-'.$product->slug)!!}" title="Diten face xare" class="button1 product-details">Chi tiết
+                                                        </a>
+                                                    </div>
+                                                        <div class="addtocart-area">
+                                                            <form method="post" class="product js-recalculate" action="#">
+                                                                <div class="addtocart-bar">
+                                                                <span class="addtocart-button">
+                                                                <input type="button" style="color: white" id="addtocart" name="addtocart" class="addtocart-button" value="Giỏ hàng" onclick="addcart(@php echo $product->id;@endphp)"
+                                                                    >
+                                                                </span>
+
+                                                <div class="clear"></div>
+                                                                </div>
+                                            <input type="hidden" class="pname" value="Diten face xare">
+                                            <input type="hidden" name="option" value="com_virtuemart">
+                                            <input type="hidden" name="view" value="cart">
+                                            <input type="hidden" class="quantity-input js-recalculate" name="quantity[]" value="1">
+                                            <noscript>&lt;input type="hidden" name="task" value="add"/&gt;</noscript>
+                                            <input type="hidden" name="virtuemart_product_id[]" value="54">
+                                        </form>
+
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <!-- end of spacer -->
+                    </div> <!-- end of product -->
+                           
+                    
+                  
+                     @php
+                        $i++;
+                        if($i%2==0)
+                        {
+                            echo '</div>';
+
+                        }
+
+                    @endphp   
+               
+                 @endforeach
+                <div class="horizontal-separator"></div>
+
+                
+
+            </div><!-- end browse-view -->
+                <div class="horizontal-separator"></div>
+
+                <div class="pagging-sort" style="margin-bottom: 10px">
+                    <div class="pagination clearfix">
+                       {{ $promotion_product->links() }}
+                    </div>
+
+
+                </div>
+
+            </div><!-- end browse-view -->
+
+
+
+    <script id="jsVars_js" type="text/javascript">//<![CDATA[ 
+        vmSiteurl = 'http://demo.smartaddons.com/templates/joomla3/sj-bakery/' ;
+        vmLang = "";
+        Virtuemart.addtocart_popup = '1' ; 
+    usefancy = true; //]]>
+    </script>
+
+    <script id="ready.vmprices_js" type="text/javascript">//<![CDATA[ 
+        jQuery(document).ready(function($) {
+            Virtuemart.product(jQuery("form.product"));
+
+        /*$("form.js-recalculate").each(function(){
+            if ($(this).find(".product-fields").length && !$(this).find(".no-vm-bind").length) {
+                var id= $(this).find('input[name="virtuemart_product_id[]"]').val();
+                Virtuemart.setproducttype($(this),id);
+
+            }
+        });*/
+    }); //]]>
+    </script>
+
+    </div></div>
+    </div>
+
+        <!--</div>-->
+    </div>
+    <span style="display:none">Hide Main content block</span>
+</div>
+@endsection

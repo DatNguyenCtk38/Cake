@@ -2,7 +2,13 @@
 	"folders":
 	[
 		{
-			"path": "C:\\xampp\\htdocs\\Cake"
+			"path": "."
+		},
+		{
+			"path": "C:\\xampp\\htdocs\\scodeweb"
+		},
+		{
+			"path": "C:\\xampp\\htdocs\\CakeShopLaravel"
 		}
 	],
 	"settings":
