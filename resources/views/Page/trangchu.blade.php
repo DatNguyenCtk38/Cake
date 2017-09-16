@@ -86,7 +86,7 @@
                                                     <span hidden="hidden" class="PricesalesPrice">{{number_format($product->promotion_price) }} ₫
                                                     </span>
                                                     @else
-                                                    <span  class="vm-price-desc">Promotion Price: </span>
+                                                    <span  class="vm-price-desc">Khuyến mãi: </span>
                                                     <span  class="PricesalesPrice">{{number_format($product->promotion_price) }} ₫</span>
                                                     @endif
                                                     </div></div>
@@ -250,7 +250,22 @@
                                         <div class="info-product">
                                             <h2><a href="{!!url('chi-tiet-san-pham/'.$product->id.'-'.$product->slug)!!}">{{ $product->name }}</a></h2>
                                             <div class="product-price marginbottom12" id="productPrice54">
-                                                <div class="PricesalesPrice vm-display vm-price-value"><span class="vm-price-desc">Giá: </span><span class="PricesalesPrice">{{ number_format($product->unit_price )  }} ₫</span></div>
+                                                <div class="PricesalesPrice vm-display vm-price-value"><span class="vm-price-desc">Giá: </span><span 
+                                                     @if ($product->promotion_price > 0)
+                                                            style="text-decoration: line-through;" 
+                                                        @endif
+                                                    class="PricesalesPrice">{{number_format($product->unit_price) }} ₫
+                                                    </span><br>
+                                                    @if ($product->promotion_price == 0)
+                                                          
+                                                    <br>
+                                                    <span hidden="hidden" class="vm-price-desc">Khuyến mãi: </span>
+                                                    <span hidden="hidden" class="PricesalesPrice">{{number_format($product->promotion_price) }} ₫
+                                                    </span>
+                                                    @else
+                                                    <span  class="vm-price-desc">Khuyến mãi: </span>
+                                                    <span  class="PricesalesPrice">{{number_format($product->promotion_price) }} ₫</span>
+                                                    @endif</div>
                                             </div>
                                             <p class="product_s_desc">
                                                 Makin zaten gravida eros quis justo sed nonummy...

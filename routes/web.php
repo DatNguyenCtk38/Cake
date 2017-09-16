@@ -83,6 +83,10 @@ Route::get('Addcartajax', [
 	'as'=>'Addcartajax',
 	'uses'=>'PageController@getAddcartajax'
 	]);
+Route::get('UpdateCart', [
+	'as'=>'UpdateCart',
+	'uses'=>'AjaxController@getUpdatecartajax'
+]);
 //////////////admin
 Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
 

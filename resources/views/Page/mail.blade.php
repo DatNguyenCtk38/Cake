@@ -71,7 +71,7 @@
 				<base href="{{asset('')}}">
 				@foreach ($listBillDetail as $bill)
 				@php
-					$ten = 'public/source/images/stories/virtuemart/product/sli12.jpg';
+					$ten = 'public/source/images/stories/virtuemart/product/'.$bill->image;
 				@endphp
 
 				<div id="mainDetail" style="float: left;width: 598px">

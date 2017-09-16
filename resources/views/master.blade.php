@@ -89,7 +89,7 @@ body a{
   <script src="public/source/modules/mod_sj_vm_extraslider/assets/js/jquery.cj-swipe.js" type="text/javascript"></script>
   <script src="public/source/components/com_virtuemart/assets/js/jquery-ui.min.js" type="text/javascript"></script>
   <script src="public/source/components/com_virtuemart/assets/js/jquery.ui.autocomplete.html.js" type="text/javascript"></script>
- 
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
   <script src="public/source/components/com_virtuemart/assets/js/fancybox/jquery.fancybox-1.3.4.pack2d20.js?vmver=8771" type="text/javascript"></script>
   <script src="public/source/components/com_virtuemart/assets/js/vmprices2d20.js?vmver=8771" type="text/javascript"></script>
   <script src="public/source/modules/mod_sj_vm_slickslider/assets/js/jquery-noconflict.js" type="text/javascript"></script>
@@ -172,7 +172,7 @@ jQuery(function($) {
     <script src="public/source/templates/sj_bakery/js/jquery-3.1.0.min.js"></script>
   </body>
 </html>
-
+<script src="public/source/templates/sj_bakery/js/my-js.js"></script>
 <script>
     function addcart(id) {
 
@@ -195,3 +195,26 @@ jQuery(function($) {
         });
     }
     </script>
+   <script type="text/javascript">
+    
+        function changecart(id,price) {
+           $.ajax({
+                url: "{{ route('UpdateCart') }}",
+                type: "get",
+                dataType: "json",
+                data: {
+                    sl : $('#gh_sl_'+id).val(),
+                    dg : price,
+                    id : id
+                },
+                success: function (result) {
+                  console.log(result);
+                  var n = result.items[id]['price'];
+                   n = n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                  $('.gio-hang-tb').html(" ("+ result.totalQty+")");
+                  $('#gh_tt_'+id).html(n+"₫");
+                }
+            });
+        }
+   
+   </script>

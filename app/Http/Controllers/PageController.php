@@ -113,6 +113,8 @@ class PageController extends Controller
             $bill_detail->unit_price = $value['price']/$value['qty'];
             $bill_detail->save();
         }
+        //print_r($cart);
+        //die();
         //--------------------------MAIL-------------------
         //Mail::send(new newMail());
         //$listBill = BillDetail::where('id_bill',$bill->id)->get();
@@ -178,8 +180,8 @@ class PageController extends Controller
         $credentials = array('email'=>$req->email,'password'=>$req->password);
         
             if(Auth::attempt($credentials)){
-
-            return redirect()->route('trang-chu');
+                return redirect()->back();
+            //return redirect()->route('trang-chu');
             }
             else{
                 return redirect()->back()->with(['flag'=>'danger','message'=>'Đăng nhập không thành công']);

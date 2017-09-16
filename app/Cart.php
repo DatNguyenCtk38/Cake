@@ -17,43 +17,59 @@ class Cart
 	}
 
 	public function add($item, $id){
-		if($item->promotion_price > 0)
-		{
-		$giohang = ['qty'=>0, 'price' => $item->promotion_price, 'item' => $item];
-		if($this->items){
-			if(array_key_exists($id, $this->items)){
-				$giohang = $this->items[$id];
-			}
-		}
-		$giohang['qty']++;
-		$giohang['price'] = $item->promotion_price * $giohang['qty'];
-		$this->items[$id] = $giohang;
-		$this->totalQty++;
-		$this->totalPrice += $item->promotion_price;
-	}
-		else{
+		if($item->promotion_price == 0){
 			$giohang = ['qty'=>0, 'price' => $item->unit_price, 'item' => $item];
+		}
+		else{
+			$giohang = ['qty'=>0, 'price' => $item->promotion_price, 'item' => $item];
+		}
 		if($this->items){
 			if(array_key_exists($id, $this->items)){
 				$giohang = $this->items[$id];
 			}
 		}
 		$giohang['qty']++;
-		$giohang['price'] = $item->unit_price * $giohang['qty'];
+		if($item->promotion_price == 0){
+			$giohang['price'] = $item->unit_price * $giohang['qty'];
+		}
+		else{
+			$giohang['price'] = $item->promotion_price * $giohang['qty'];
+		}
 		$this->items[$id] = $giohang;
 		$this->totalQty++;
-		$this->totalPrice += $item->unit_price;
+		if($item->promotion_price == 0){
+			$this->totalPrice += $item->unit_price;
 		}
+		else{
+			$this->totalPrice += $item->promotion_price;
+		}
+		
 	}
 	//xóa 1
 	public function reduceByOne($id){
 		$this->items[$id]['qty']--;
-		$this->items[$id]['price'] -= $this->items[$id]['item']['price'];
+		$this->items[$id]['price'] -= $this->items[$id]['item']['promotion_price'];
 		$this->totalQty--;
-		$this->totalPrice -= $this->items[$id]['item']['price'];
+		$this->totalPrice -= $this->items[$id]['item']['promotion_price'];
 		if($this->items[$id]['qty']<=0){
 			unset($this->items[$id]);
 		}
+	}
+	
+	public function raise($id,$n){
+		$this->items[$id]['qty'] =$n;
+		$this->items[$id]['price'] = $this->items[$id]['item']['promotion_price']*$n;
+		if ($this->totalQty==$this->items[$id]['qty']) {
+			$this->totalQty = $n;
+		}
+		elseif ($this->totalQty>$this->items[$id]['qty']) {
+			$this->totalQty +=1;
+		}
+		$this->totalPrice = $this->items[$id]['item']['promotion_price']*$n;
+		if($this->items[$id]['qty']<=0){
+			unset($this->items[$id]);
+		}
+
 	}
 	//xóa nhiều
 	public function removeItem($id){

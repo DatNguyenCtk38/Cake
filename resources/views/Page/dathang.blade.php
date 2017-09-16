@@ -135,31 +135,42 @@
 
 <table class="cart-summary" cellspacing="0" cellpadding="0" border="0" width="100%">
 <tbody><tr>
-	<th align="left">Name</th>
-	<th align="left">SKU</th>
-	<th style="min-width:70px;width:5%;align:right;text-align:center">Price</th>
-	<th style="min-width:120px;width:10%;align:right;text-align:center">Quantity		/ Update</th>
+	<th align="left">Tên sản phẩm</th>
+	<th style="min-width:70px;width:5%;align:right;text-align:center" align="left">Hình ảnh</th>
+	<th style="min-width:70px;width:5%;align:right;text-align:center">Giá</th>
+	<th style="min-width:120px;width:10%;align:right;text-align:center">Số lượng		/ Update</th>
 
 
-		<th style="min-width:76px;width:5%;align:right;text-align:center"><span class="priceColor2">Tax 21%</span></th>
-		<th style="min-width:76px;width:5%;align:right;text-align:center"><span class="priceColor2">Discount</span></th>
-	<th style="min-width:80px;width:5%;align:right;text-align:center">Total</th>
+		<th style="min-width:76px;width:5%;align:right;text-align:center"><span class="priceColor2">Thuế</span></th>
+		<th style="min-width:76px;width:5%;align:right;text-align:center"><span class="priceColor2">Giảm giá</span></th>
+	<th style="min-width:80px;width:5%;align:right;text-align:center">Tổng giá</th>
 </tr>
 
+@if(Session::has('cart'))
 
-<tr valign="top" class="sectiontableentry1">
+	@foreach($product_cart as $cart)
+					<!-- end one item -->				
+	<tr valign="top" class="sectiontableentry1">
+
 	<input type="hidden" name="cartpos[]" value="0">
 	<td align="left">
 				<span class="cart-images">
 						 						</span>
-				<a href="/templates/joomla3/sj-bakery/index.php/fruits-cake/dika-lote-case-detail">Dika lote case</a><div class="vm-customfield-cart"></div>
+				<a href="/templates/joomla3/sj-bakery/index.php/fruits-cake/dika-lote-case-detail">{{$cart['item']['name']}}</a><div class="vm-customfield-cart"></div>
 	</td>
-	<td align="left">F900994</td>
+	<td align="center" style="width: 23%">
+		<img width="92%" src="public/source/images/stories/virtuemart/product/{{$cart['item']['image']}}" alt="" class="pull-left">
+	</td>
 	<td align="right">
-        <div class="PricesalesPrice vm-display vm-price-value"><span class="vm-price-desc"></span><span class="PricesalesPrice">94,38 €</span></div>        
+        <div class="PricesalesPrice vm-display vm-price-value"><span class="vm-price-desc"></span><span " class="PricesalesPrice">@if ($cart['item']['promotion_price']>0)
+        	{{number_format($cart['item']['promotion_price'])}}
+        @else
+        	{{number_format($cart['item']['unit_price'])}}
+        @endif ₫</span></div>        
         
 	</td>
-	<td align="right">		   <input type="text" onblur="Virtuemart.checkQuantity(this,1,'You can buy this product only in multiples of %s pieces!');" onclick="Virtuemart.checkQuantity(this,1,'You can buy this product only in multiples of %s pieces!');" onchange="Virtuemart.checkQuantity(this,1,'You can buy this product only in multiples of %s pieces!');" onsubmit="Virtuemart.checkQuantity(this,1,'You can buy this product only in multiples of %s pieces!');" title="Update Quantity In Cart" class="quantity-input js-recalculate" size="3" maxlength="4" name="quantity[0]" value="1">
+	<td align="right">
+		<input min="1" max="5" id="gh_sl_{{$cart['item']['id']}}" onchange="changecart({{$cart['item']['id']}},{{$cart['item']['unit_price']}})" type="number" title="Update Quantity In Cart" class="quantity-input js-recalculate" size="3"  name="quantity[0]" value="{{$cart['qty']}}">
 
         <button type="submit" class="vmicon vm2-add_quantity_cart" name="updatecart.0" title="Update Quantity In Cart"><i class="fa fa-refresh"></i></button>
 
@@ -169,8 +180,10 @@
 		<td align="right"><span class="priceColor2"></span>    </td>
 		<td align="right"><span class="priceColor2"></span></td>
 	<td colspan="1" align="right">
-		<div class="PricesalesPrice vm-display vm-price-value"><span class="vm-price-desc"></span><span class="PricesalesPrice">94,38 €</span></div></td>
-</tr>
+		<div class="PricesalesPrice vm-display vm-price-value"><span class="vm-price-desc"></span><span id="gh_tt_{{$cart['item']['id']}}" class="PricesalesPrice">{{number_format($cart['price'])}} ₫</span></div></td>
+	</tr>
+	@endforeach
+@endif
 	<!--Begin of SubTotal, Tax, Shipment, Coupon Discount and Total listing -->
 <tr class="sectiontableentry1">
 	<td colspan="4" align="right">Product prices result</td>

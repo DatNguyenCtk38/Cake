@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"json",
+				"json_encode"
+			],
+			[
+				"Pro",
+				"Product〔namespace〕"
+			],
+			[
+				"pri",
+				"print_r〔function〕"
+			],
+			[
+				"Rou",
+				"Route::get\tBasic Get Route."
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"st",
+				"style"
+			],
+			[
+				"Au",
+				"Auth::logout\tLog the user out of the application."
+			],
+			[
 				"ma",
 				"margin-left"
 			],
@@ -34,10 +62,6 @@
 			[
 				"vi",
 				"virtuemart"
-			],
-			[
-				"st",
-				"stories"
 			],
 			[
 				"num",
@@ -80,20 +104,12 @@
 				"foreach\tblade-foreach"
 			],
 			[
-				"Pro",
-				"Product"
-			],
-			[
 				"sec",
 				"sec\tblade-section"
 			],
 			[
 				"gr",
 				"group"
-			],
-			[
-				"Rou",
-				"Route"
 			],
 			[
 				"comp",
@@ -108,20 +124,12 @@
 				"App"
 			],
 			[
-				"pri",
-				"print_r($cart"
-			],
-			[
 				"fo",
 				"foreach\tforeach …"
 			],
 			[
 				"prin",
 				"print〔function〕"
-			],
-			[
-				"fun",
-				"function〔keyword〕"
 			],
 			[
 				"oncl",
@@ -274,10 +282,6 @@
 			[
 				"Route",
 				"Route::get\tBasic Get Route."
-			],
-			[
-				"Au",
-				"Auth::attempt\tInitiate an Authentication attempt"
 			],
 			[
 				"ar",
@@ -491,6 +495,46 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "resources/views/Page/loaisanpham.blade.php",
+			"settings":
+			{
+				"buffer_size": 9150,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "resources/views/Page/trangchu.blade.php",
+			"settings":
+			{
+				"buffer_size": 21658,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Windows",
+				"name": "Xdebug Stack",
+				"read_only": true,
+				"scratch": true
+			}
+		},
+		{
+			"contents": "",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Windows",
+				"name": "Xdebug Breakpoint",
+				"read_only": true,
+				"scratch": true
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -536,30 +580,48 @@
 	},
 	"expanded_folders":
 	[
+		"/C/xampp/htdocs/Cake",
+		"/C/xampp/htdocs/Cake/app",
+		"/C/xampp/htdocs/Cake/resources"
 	],
 	"file_history":
 	[
-		"/C/xampp/htdocs/Cake/resources/views/Page/trangchu.blade.php",
-		"/C/xampp/htdocs/Cake/resources/views/Page/mail.blade.php",
+		"/C/xampp/htdocs/Cake/resources/views/Page/dathang.blade.php",
+		"/C/xampp/htdocs/Cake/resources/views/master.blade.php",
+		"/C/xampp/htdocs/Cake/app/Http/Controllers/HoaDonController.php",
+		"/C/xampp/htdocs/linhkiendt/app/controller/giohang.php",
+		"/C/xampp/htdocs/linhkiendt/view/modules/giohang.php",
+		"/C/xampp/htdocs/Cake/app/Cart.php",
+		"/C/xampp/htdocs/Cake/app/Http/Controllers/AjaxController.php",
+		"/C/xampp/htdocs/Cake/resources/views/layout/header.blade.php",
+		"/C/Users/Admin/AppData/Local/Temp/Rar$DIa0.557/Cart.php",
 		"/C/xampp/htdocs/Cake/app/Http/Controllers/PageController.php",
+		"/C/xampp/htdocs/Cake/resources/views/Page/mail.blade.php",
 		"/C/xampp/htdocs/Cake/app/Providers/AppServiceProvider.php",
+		"/C/xampp/htdocs/Cake/pro.sublime-project",
+		"/C/xampp/htdocs/Cake/routes/web.php",
+		"/C/xampp/htdocs/Cake/resources/views/layout/master.blade.php",
+		"/C/xampp/htdocs/Cake/app/Http/Controllers/AdminController.php",
+		"/C/xampp/htdocs/Cake/public/source/templates/sj_bakery/js/my-js.js",
+		"/C/xampp/htdocs/Cake/resources/views/layout/footer.blade.php",
+		"/C/xampp/htdocs/Cake/resources/views/Page/trangchu.blade.php",
+		"/C/xampp/htdocs/Cake/resources/views/Page/dangnhap.blade.php",
+		"/E/IT_DLU/PHP/Template/CakeShop/demo.smartaddons.com/templates/joomla3/sj-bakery/index.html",
+		"/C/xampp/htdocs/CakeShopLaravel/resources/views/Page/trangchu.blade.php",
+		"/C/xampp/htdocs/CakeShopLaravel/resources/views/Page/mail.blade.php",
 		"/C/xampp/htdocs/Cake/app/Mail/SendMail.php",
 		"/C/xampp/htdocs/CakeShopLaravel/app/Providers/AppServiceProvider.php",
-		"/C/xampp/htdocs/CakeShopLaravel/resources/views/Page/mail.blade.php",
 		"/C/xampp/htdocs/CakeShopLaravel/app/Http/Controllers/PageController.php",
 		"/C/xampp/htdocs/CakeShopLaravel/.env",
 		"/C/xampp/htdocs/CakeShopLaravel/resources/views/master.blade.php",
-		"/C/xampp/htdocs/CakeShopLaravel/resources/views/Page/trangchu.blade.php",
 		"/C/xampp/htdocs/CakeShopLaravel/app/Mail/SendMail.php",
 		"/C/xampp/htdocs/CakeShopLaravel/resources/views/Page/dathang.blade.php",
-		"/C/xampp/htdocs/Cake/resources/views/Page/dathang.blade.php",
 		"/C/xampp/htdocs/CakeShopLaravel/resources/views/layout/header.blade.php",
 		"/C/xampp/htdocs/CakeShopLaravel/routes/web.php",
 		"/C/xampp/htdocs/CakeShopLaravel/resources/views/Page/dangky.blade.php",
 		"/C/xampp/htdocs/CakeShopLaravel/resources/views/Page/loaisanpham.blade.php",
 		"/E/IT_DLU/PHP/Template/CakeShop/demo.smartaddons.com/templates/joomla3/sj-bakery/index.php/virtuemart/other-pages/shopping-cart/cart.html",
 		"/C/xampp/htdocs/CakeShopLaravel/resources/views/Page/chitietsanpham.blade.php",
-		"/C/xampp/htdocs/Cake/resources/views/master.blade.php",
 		"/C/xampp/htdocs/Cake/resources/views/mail.blade.php",
 		"/C/xampp/htdocs/Cake/resources/views/header.blade.php",
 		"/C/xampp/htdocs/CakeShopLaravel/resources/views/layout/content_left.blade.php",
@@ -589,8 +651,6 @@
 		"/C/xampp/htdocs/newtemplate/resources/views/master.blade.php",
 		"/C/xampp/htdocs/newtemplate/routes/web.php",
 		"/C/xampp/htdocs/newtemplate/resources/views/trang-chu.blade.php",
-		"/E/IT_DLU/PHP/Template/CakeShop/demo.smartaddons.com/templates/joomla3/sj-bakery/index.html",
-		"/C/xampp/htdocs/Cake/routes/web.php",
 		"/C/xampp/htdocs/scodeweb/app/Http/Controllers/NewsController.php",
 		"/C/xampp/htdocs/scodeweb/app/Http/Controllers/Admin_usersController.php",
 		"/C/xampp/htdocs/scodeweb/app/Http/Controllers/AdminController.php",
@@ -600,7 +660,6 @@
 		"/C/xampp/htdocs/scodeweb/app/Http/Controllers/PagesController.php",
 		"/C/xampp/htdocs/scodeweb/app/Http/Controllers/HomeController.php",
 		"/C/xampp/htdocs/Cake/app/Http/Controllers/SanPhamController.php",
-		"/C/xampp/htdocs/Cake/app/Http/Controllers/HoaDonController.php",
 		"/C/xampp/htdocs/Cake/app/Http/Controllers/TheLoaiController.php",
 		"/C/xampp/htdocs/Cake/app/Mail/newMail.php",
 		"/C/xampp/htdocs/Cake/app/Http/Controllers/MailController.php",
@@ -621,7 +680,6 @@
 		"/E/IT_DLU/PHP/Template/Test/slide.html",
 		"/E/IT_DLU/PHP/Template/Test/header.html",
 		"/C/xampp/htdocs/Cake/resources/views/test.blade.php",
-		"/C/xampp/htdocs/Cake/app/Http/Controllers/AjaxController.php",
 		"/C/xampp/htdocs/Cake/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php",
 		"/C/xampp/htdocs/Cake/vendor/composer/ClassLoader.php",
 		"/C/xampp/htdocs/Cake/vendor/symfony/http-foundation/ResponseHeaderBag.php",
@@ -629,7 +687,6 @@
 		"/C/xampp/htdocs/Cake/vendor/laravel/framework/src/Illuminate/View/Factory.php",
 		"/C/xampp/htdocs/Cake/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php",
 		"/C/xampp/htdocs/Cake/index.php",
-		"/C/xampp/htdocs/Cake/pro.sublime-project",
 		"/C/xampp/htdocs/QuanLyBanhKem/save.sublime-project",
 		"/C/xampp/htdocs/linhkiendt/sav.sublime-project",
 		"/C/xampp/htdocs/linhkiendt/index.php",
@@ -656,17 +713,7 @@
 		"/C/xampp/htdocs/linhkiendt/view/modules/home.php",
 		"/C/xampp/htdocs/linhkiendt/app/controller/home.php",
 		"/C/xampp/htdocs/linhkiendt/view/layout/footer.php",
-		"/C/xampp/htdocs/linhkiendt/app/controller/giohang.php",
-		"/C/xampp/htdocs/AJAX/index.php",
-		"/C/xampp/htdocs/AJAX/test.php",
-		"/C/xampp/htdocs/linhkiendt/view/layout/header.php",
-		"/C/xampp/htdocs/linhkiendt/alo.html",
-		"/C/xampp/htdocs/linhkiendt/app/App.php",
-		"/C/xampp/htdocs/QuanLyBanhKem/resources/views/admin/theloai/sua.blade.php",
-		"/C/xampp/htdocs/QuanLyBanhKem/resources/views/admin/sanpham/sua.blade.php",
-		"/C/xampp/htdocs/QuanLyBanhKem/app/Http/Controllers/TheLoaiController.php",
-		"/C/xampp/htdocs/scodeweb/app/Detail_img.php",
-		"/C/xampp/htdocs/laravel/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php"
+		"/C/xampp/htdocs/AJAX/index.php"
 	],
 	"find":
 	{
@@ -684,6 +731,7 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"jquery.easing.1.3.js",
 			"vm.CartModule.UpdateModule_js",
 			"sli12.jpg",
 			"->description",
@@ -768,8 +816,71 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "resources/views/Page/loaisanpham.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9150,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4762,
+								4762
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1092.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "resources/views/Page/trangchu.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 21658,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								17211,
+								17211
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3636.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
 			]
 		},
 		{
@@ -778,8 +889,65 @@
 			]
 		},
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 2,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Xdebug Client/Xdebug.tmLanguage",
+							"word_wrap": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Xdebug Client/Xdebug.tmLanguage",
+							"word_wrap": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -817,13 +985,13 @@
 		"cols":
 		[
 			0.0,
-			0.863555555556,
+			0.5,
 			1.0
 		],
 		"rows":
 		[
 			0.0,
-			0.896574770259,
+			0.924585218703,
 			1.0
 		]
 	},
@@ -845,7 +1013,7 @@
 		"height": 29.0
 	},
 	"pinned_build_system": "",
-	"project": "pro.sublime-project",
+	"project": "xdebug.sublime-project",
 	"replace":
 	{
 		"height": 62.0
@@ -894,40 +1062,30 @@
 			"hide_conflict": false,
 			"restore_index":
 			{
-				"17":
-				{
-					"group": 1,
-					"index": 0
-				},
-				"18":
-				{
-					"group": 1,
-					"index": 1
-				},
-				"19":
-				{
-					"group": 2,
-					"index": 0
-				},
-				"20":
-				{
-					"group": 2,
-					"index": 1
-				},
-				"30":
+				"24":
 				{
 					"group": 0,
 					"index": 0
 				},
-				"31":
-				{
-					"group": 0,
-					"index": 1
-				},
-				"32":
+				"43":
 				{
 					"group": 0,
 					"index": 2
+				},
+				"47":
+				{
+					"group": 0,
+					"index": 4
+				},
+				"52":
+				{
+					"group": 0,
+					"index": 1
+				},
+				"56":
+				{
+					"group": 0,
+					"index": 3
 				}
 			},
 			"restore_layout":
@@ -962,7 +1120,7 @@
 				"rows":
 				[
 					0.0,
-					0.7,
+					0.724629068902,
 					1.0
 				]
 			}
