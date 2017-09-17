@@ -124,7 +124,7 @@ class PageController extends Controller
                 ->where('bill_detail.id_bill','=',$bill->id)
                 ->get();
         //print_r($listBill);
-        //die();
+        die();
         Mail::send(new SendMail($listBill,$req->name,$req->phone,$req->address,$bill->created_at,$bill->total, $customer->email));
         //__________________________MAIL___________________
         Session::forget('cart');
@@ -190,7 +190,7 @@ class PageController extends Controller
         
     public function postLogout(){
         Auth::logout();
-        return redirect()->route('trang-chu');
+        return redirect()->back();
     }
     public function getTimKiem(Request $req){
         $product = Product::where('name','like','%'.$req->key.'%')->orWhere('unit_price',$req->key)->get();

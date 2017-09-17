@@ -13,7 +13,16 @@
 	    	    <div class="modcontent clearfix">
 		
 <ul class="breadcrumb ">
-<li class="active"><span class="divider"><i class="icon-home" rel="tooltip" title="You are here: "></i></span></li><li><a href="/templates/joomla3/sj-bakery/index.php" class="pathway">Home</a><span class="divider">/</span></li><li></li><li><a href="/templates/joomla3/sj-bakery/index.php/specialty-cake/manufacturer/?categorylayout=0&amp;showcategory=1&amp;showproducts=1&amp;productsublayout=0" class="pathway">Virtuemart</a><span class="divider">/</span></li><li></li><li><span>Other Pages</span><span class="divider">/</span></li><li></li><li><a href="/templates/joomla3/sj-bakery/index.php/virtuemart/other-pages/shopping-cart/cart" class="pathway">Shopping Cart</a></li><li></li><li><span class="divider">/</span><span>Shopping cart</span></li><li></li></ul>
+<li class="active">
+	<span class="divider">
+		<i class="icon-home" rel="tooltip" title="You are here: "></i>
+	</span>
+</li>
+<li>
+	<a href="/templates/joomla3/sj-bakery/index.php" class="pathway">Home</a>
+	<span class="divider">/</span>
+</li>
+<li></li><li><a href="/templates/joomla3/sj-bakery/index.php/virtuemart/other-pages/shopping-cart/cart" class="pathway">Shopping Cart</a></li><li></li></ul>
 	    </div>
 		
 	   
@@ -34,7 +43,24 @@
 			<a class="continue_link" href="/templates/joomla3/sj-bakery/index.php/specialty-cake">Continue Shopping</a>		</div>
 		<div class="clear"></div>
 	</div>
-
+	@php
+		
+		if (Auth::check()){
+			 $name = Auth::user()->full_name ;
+			 $gender =  Auth::user()->gender ;
+			 $email =  Auth::user()->email ;
+			 $address =  Auth::user()->address ;
+			 $phone =  Auth::user()->phone ;
+		}
+		else{
+			 $name = "";
+			 $gender =  "";
+			 $email = "" ;
+			 $address =  "" ;
+			 $phone =  "" ;
+			}
+		
+	@endphp
 	    <form id="com-form-login" action="{{route('chuyenhang')}}" method="post" >
 	    	<input type="hidden" name="_token" value="{{csrf_token()}}">
     <fieldset class="userdata">
@@ -45,7 +71,7 @@
 		</p>
 
         <p class="width30 floatleft" id="name">
-            <input style="margin-bottom: 20px;width: 130%" type="text" name="name" class="inputbox" size="18" placeholder="Họ tên">
+            <input required style="margin-bottom: 20px;width: 130%" type="text" value="{!! $name !!}" name="name" class="inputbox" size="18" placeholder="Họ tên">
 		</p>
 		<div class="clear"></div>
 		<!--Giới tính-->
@@ -55,8 +81,16 @@
         <p class="width30 floatleft" id="gender">
            <div class="form-block"  style="margin-bottom: 20px">
 							
-							<input id="gender" type="radio" class="input-radio" name="gender" value="nam" checked="checked" style="width: 5%">Nam</span>
-							<input id="gender" type="radio" class="input-radio" name="gender" value="nữ" style="width: 5%"><span>Nữ</span>
+							<input id="gender" type="radio" class="input-radio" name="gender" value="nam" 
+								@if ( $gender ==0)
+									checked="checked" 
+								@endif
+							 style="width: 5%">Nam</span>
+							<input id="gender" type="radio" class="input-radio" name="gender" value="nữ" 
+								@if ( $gender ==1 )
+									checked="checked" 
+								@endif
+							style="width: 5%"><span>Nữ</span>
 										
 						</div>
 		</p>
@@ -66,7 +100,7 @@
             Email
 		</p>
         <p class="width30 floatleft" id="email">
-            <input style="margin-bottom: 20px;width: 130%" type="text" name="email" class="inputbox" size="18" placeholder="Email@gmail.com">
+            <input required value="{!! $email !!}" style="margin-bottom: 20px;width: 130%" type="text" name="email" class="inputbox" size="18" placeholder="Email@gmail.com">
 		</p>
 		<!--Địa chỉ-->
 		<div class="clear"></div>
@@ -74,7 +108,7 @@
             Địa chỉ
 		</p>
         <p class="width30 floatleft" id="address">
-            <input style="margin-bottom: 20px;width: 130%" type="text" name="address" class="inputbox" size="18" placeholder="Địa chỉ">
+            <input required value="{!! $address !!}" style="margin-bottom: 20px;width: 130%" type="text" name="address" class="inputbox" size="18" placeholder="Địa chỉ">
 		</p>
 		<!--Điện thoại-->
 		<div class="clear"></div>
@@ -82,7 +116,7 @@
             Số điện thoại
 		</p>
         <p class="width30 floatleft" id="phone">
-            <input style="margin-bottom: 20px;width: 130%" type="text" name="phone" class="inputbox" size="18" placeholder="Số điện thoại">
+            <input required value="{!! $phone !!}" style="margin-bottom: 20px;width: 130%" type="text" name="phone" class="inputbox" size="18" placeholder="Số điện thoại">
 		</p>
 		<!--Ghi chú-->
 		<div class="clear"></div>

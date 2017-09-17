@@ -4,8 +4,20 @@
 		"selected_items":
 		[
 			[
+				"check",
+				"checked\tAttr"
+			],
+			[
 				"if",
 				"ife\tblade-if_else"
+			],
+			[
+				"Au",
+				"Auth::user\tGet the currently authenticated user."
+			],
+			[
+				"g",
+				"gender"
 			],
 			[
 				"ima",
@@ -38,10 +50,6 @@
 			[
 				"st",
 				"style"
-			],
-			[
-				"Au",
-				"Auth::logout\tLog the user out of the application."
 			],
 			[
 				"ma",
@@ -500,34 +508,12 @@
 	"buffers":
 	[
 		{
-			"file": "resources/views/layout/header.blade.php",
+			"file": "app/Http/Controllers/PageController.php",
 			"settings":
 			{
-				"buffer_size": 16407,
+				"buffer_size": 6996,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "",
-			"settings":
-			{
-				"buffer_size": 0,
-				"line_ending": "Windows",
-				"name": "Xdebug Stack",
-				"read_only": true,
-				"scratch": true
-			}
-		},
-		{
-			"contents": "",
-			"settings":
-			{
-				"buffer_size": 0,
-				"line_ending": "Windows",
-				"name": "Xdebug Breakpoint",
-				"read_only": true,
-				"scratch": true
 			}
 		}
 	],
@@ -578,32 +564,31 @@
 		"/C/xampp/htdocs/Cake",
 		"/C/xampp/htdocs/Cake/app",
 		"/C/xampp/htdocs/Cake/app/Http",
-		"/C/xampp/htdocs/Cake/app/Http/Controllers",
-		"/C/xampp/htdocs/Cake/resources",
-		"/C/xampp/htdocs/Cake/resources/views",
-		"/C/xampp/htdocs/Cake/resources/views/layout"
+		"/C/xampp/htdocs/Cake/app/Http/Controllers"
 	],
 	"file_history":
 	[
+		"/C/xampp/htdocs/linhkiendt/app/controller/hoadon.php",
+		"/C/xampp/htdocs/linhkiendt/view/modules/giohang.php",
+		"/C/xampp/htdocs/Cake/app/Http/Controllers/AdminController.php",
+		"/C/xampp/htdocs/Cake/app/Http/Controllers/PageController.php",
+		"/C/xampp/htdocs/Cake/resources/views/Page/dathang.blade.php",
+		"/C/xampp/htdocs/Cake/app/Http/Middleware/AdminLogin.php",
+		"/C/xampp/htdocs/Cake/resources/views/Page/mail.blade.php",
+		"/C/xampp/htdocs/Cake/resources/views/layout/header.blade.php",
 		"/C/xampp/htdocs/Cake/resources/views/master.blade.php",
 		"/C/xampp/htdocs/Cake/app/Cart.php",
 		"/C/xampp/htdocs/Cake/app/Http/Controllers/AjaxController.php",
-		"/C/xampp/htdocs/Cake/resources/views/Page/dathang.blade.php",
 		"/C/xampp/htdocs/Cake/resources/views/Page/dangnhap.blade.php",
 		"/C/xampp/htdocs/Cake/routes/web.php",
 		"/C/xampp/htdocs/Cake/app/Providers/AppServiceProvider.php",
-		"/C/xampp/htdocs/Cake/resources/views/layout/header.blade.php",
 		"/C/xampp/htdocs/Cake/resources/views/Page/trangchu.blade.php",
 		"/C/xampp/htdocs/Cake/resources/views/Page/loaisanpham.blade.php",
 		"/C/xampp/htdocs/Cake/app/Http/Controllers/HoaDonController.php",
 		"/C/xampp/htdocs/linhkiendt/app/controller/giohang.php",
-		"/C/xampp/htdocs/linhkiendt/view/modules/giohang.php",
 		"/C/Users/Admin/AppData/Local/Temp/Rar$DIa0.557/Cart.php",
-		"/C/xampp/htdocs/Cake/app/Http/Controllers/PageController.php",
-		"/C/xampp/htdocs/Cake/resources/views/Page/mail.blade.php",
 		"/C/xampp/htdocs/Cake/pro.sublime-project",
 		"/C/xampp/htdocs/Cake/resources/views/layout/master.blade.php",
-		"/C/xampp/htdocs/Cake/app/Http/Controllers/AdminController.php",
 		"/C/xampp/htdocs/Cake/public/source/templates/sj_bakery/js/my-js.js",
 		"/C/xampp/htdocs/Cake/resources/views/layout/footer.blade.php",
 		"/E/IT_DLU/PHP/Template/CakeShop/demo.smartaddons.com/templates/joomla3/sj-bakery/index.html",
@@ -710,9 +695,7 @@
 		"/C/xampp/htdocs/QuanLyBanhKem/resources/views/admin/layout/header.blade.php",
 		"/C/xampp/htdocs/linhkiendt/app/controller/dangnhap.php",
 		"/C/xampp/htdocs/QuanLyBanhKem/app/Providers/AppServiceProvider.php",
-		"/C/xampp/htdocs/linhkiendt/view/modules/home.php",
-		"/C/xampp/htdocs/linhkiendt/app/controller/home.php",
-		"/C/xampp/htdocs/linhkiendt/view/layout/footer.php"
+		"/C/xampp/htdocs/linhkiendt/view/modules/home.php"
 	],
 	"find":
 	{
@@ -820,100 +803,32 @@
 			[
 				{
 					"buffer": 0,
-					"file": "resources/views/layout/header.blade.php",
+					"file": "app/Http/Controllers/PageController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 16407,
+						"buffer_size": 6996,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2876,
-								2876
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"auto_complete": false,
 							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 378.0,
+						"translation.y": 1092.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				}
-			]
-		},
-		{
-			"sheets":
-			[
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
-				{
-					"buffer": 1,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Xdebug Client/Xdebug.tmLanguage",
-							"word_wrap": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Xdebug Client/Xdebug.tmLanguage",
-							"word_wrap": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -934,32 +849,18 @@
 			[
 				0,
 				0,
-				2,
+				1,
 				1
-			],
-			[
-				0,
-				1,
-				1,
-				2
-			],
-			[
-				1,
-				1,
-				2,
-				2
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.5,
 			1.0
 		],
 		"rows":
 		[
 			0.0,
-			0.924585218703,
 			1.0
 		]
 	},
@@ -1094,7 +995,7 @@
 			}
 		}
 	},
-	"show_minimap": true,
+	"show_minimap": false,
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
