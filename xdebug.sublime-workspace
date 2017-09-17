@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"if",
+				"ife\tblade-if_else"
+			],
+			[
+				"ima",
+				"images"
+			],
+			[
+				"back",
+				"background-image"
+			],
+			[
 				"json",
 				"json_encode"
 			],
@@ -38,10 +50,6 @@
 			[
 				"pa",
 				"padding"
-			],
-			[
-				"if",
-				"if\tif …"
 			],
 			[
 				"loa",
@@ -238,10 +246,6 @@
 			[
 				"border-",
 				"border-top"
-			],
-			[
-				"back",
-				"background-color"
 			],
 			[
 				"fl",
@@ -496,19 +500,10 @@
 	"buffers":
 	[
 		{
-			"file": "resources/views/Page/loaisanpham.blade.php",
+			"file": "resources/views/layout/header.blade.php",
 			"settings":
 			{
-				"buffer_size": 9150,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "resources/views/Page/trangchu.blade.php",
-			"settings":
-			{
-				"buffer_size": 21658,
+				"buffer_size": 16407,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -582,30 +577,35 @@
 	[
 		"/C/xampp/htdocs/Cake",
 		"/C/xampp/htdocs/Cake/app",
-		"/C/xampp/htdocs/Cake/resources"
+		"/C/xampp/htdocs/Cake/app/Http",
+		"/C/xampp/htdocs/Cake/app/Http/Controllers",
+		"/C/xampp/htdocs/Cake/resources",
+		"/C/xampp/htdocs/Cake/resources/views",
+		"/C/xampp/htdocs/Cake/resources/views/layout"
 	],
 	"file_history":
 	[
-		"/C/xampp/htdocs/Cake/resources/views/Page/dathang.blade.php",
 		"/C/xampp/htdocs/Cake/resources/views/master.blade.php",
+		"/C/xampp/htdocs/Cake/app/Cart.php",
+		"/C/xampp/htdocs/Cake/app/Http/Controllers/AjaxController.php",
+		"/C/xampp/htdocs/Cake/resources/views/Page/dathang.blade.php",
+		"/C/xampp/htdocs/Cake/resources/views/Page/dangnhap.blade.php",
+		"/C/xampp/htdocs/Cake/routes/web.php",
+		"/C/xampp/htdocs/Cake/app/Providers/AppServiceProvider.php",
+		"/C/xampp/htdocs/Cake/resources/views/layout/header.blade.php",
+		"/C/xampp/htdocs/Cake/resources/views/Page/trangchu.blade.php",
+		"/C/xampp/htdocs/Cake/resources/views/Page/loaisanpham.blade.php",
 		"/C/xampp/htdocs/Cake/app/Http/Controllers/HoaDonController.php",
 		"/C/xampp/htdocs/linhkiendt/app/controller/giohang.php",
 		"/C/xampp/htdocs/linhkiendt/view/modules/giohang.php",
-		"/C/xampp/htdocs/Cake/app/Cart.php",
-		"/C/xampp/htdocs/Cake/app/Http/Controllers/AjaxController.php",
-		"/C/xampp/htdocs/Cake/resources/views/layout/header.blade.php",
 		"/C/Users/Admin/AppData/Local/Temp/Rar$DIa0.557/Cart.php",
 		"/C/xampp/htdocs/Cake/app/Http/Controllers/PageController.php",
 		"/C/xampp/htdocs/Cake/resources/views/Page/mail.blade.php",
-		"/C/xampp/htdocs/Cake/app/Providers/AppServiceProvider.php",
 		"/C/xampp/htdocs/Cake/pro.sublime-project",
-		"/C/xampp/htdocs/Cake/routes/web.php",
 		"/C/xampp/htdocs/Cake/resources/views/layout/master.blade.php",
 		"/C/xampp/htdocs/Cake/app/Http/Controllers/AdminController.php",
 		"/C/xampp/htdocs/Cake/public/source/templates/sj_bakery/js/my-js.js",
 		"/C/xampp/htdocs/Cake/resources/views/layout/footer.blade.php",
-		"/C/xampp/htdocs/Cake/resources/views/Page/trangchu.blade.php",
-		"/C/xampp/htdocs/Cake/resources/views/Page/dangnhap.blade.php",
 		"/E/IT_DLU/PHP/Template/CakeShop/demo.smartaddons.com/templates/joomla3/sj-bakery/index.html",
 		"/C/xampp/htdocs/CakeShopLaravel/resources/views/Page/trangchu.blade.php",
 		"/C/xampp/htdocs/CakeShopLaravel/resources/views/Page/mail.blade.php",
@@ -712,8 +712,7 @@
 		"/C/xampp/htdocs/QuanLyBanhKem/app/Providers/AppServiceProvider.php",
 		"/C/xampp/htdocs/linhkiendt/view/modules/home.php",
 		"/C/xampp/htdocs/linhkiendt/app/controller/home.php",
-		"/C/xampp/htdocs/linhkiendt/view/layout/footer.php",
-		"/C/xampp/htdocs/AJAX/index.php"
+		"/C/xampp/htdocs/linhkiendt/view/layout/footer.php"
 	],
 	"find":
 	{
@@ -821,19 +820,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "resources/views/Page/loaisanpham.blade.php",
+					"file": "resources/views/layout/header.blade.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9150,
+						"buffer_size": 16407,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4762,
-								4762
+								2876,
+								2876
 							]
 						],
 						"settings":
@@ -844,41 +843,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1092.0,
+						"translation.y": 378.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "resources/views/Page/trangchu.blade.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 21658,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								17211,
-								17211
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 3636.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -892,6 +860,34 @@
 			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 1,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Xdebug Client/Xdebug.tmLanguage",
+							"word_wrap": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
 				{
 					"buffer": 2,
 					"semi_transient": false,
@@ -918,34 +914,6 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Xdebug Client/Xdebug.tmLanguage",
-							"word_wrap": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
 					"type": "text"
 				}
 			]

@@ -20,15 +20,33 @@
                             <ul class="sj-login-regis">
 
                                 <li class="sj-register">
-                                    <a class="register-switch text-font" href="index.php/joomla-pages/2013-02-21-09-25-47/register.html">
-                                        <span class="title-link">Đăng kí</span>
-                                    </a>
+                                     @if(Auth::check())
+                                        <a class="register-switch text-font" href="{{ route('dangxuat') }}">
+                                            <span class="title-link">Đăng xuất</span>
+                                        </a>
+                                    @else
+                                        <a class="register-switch text-font" href="index.php/joomla-pages/2013-02-21-09-25-47/register.html">
+                                            <span class="title-link">Đăng kí</span>
+                                        </a>
+                                    @endif
                                 </li>
                                 
                                 <li class="sj-login">
-                                    <a href="#mod-login" role="button" class="login-switch text-font" title="" data-toggle="modal">
-                                        <span class="title-link">Đăng nhập</span>
+                                     @if(Auth::check())
+                                    <a href="javascript:void(0)" role="button" class="login-switch text-font" title="" >
+                                        <span class="title-link">
+                                          {{Auth::user()->full_name}}
+                                           
+                                        </span>
                                     </a>
+                                    @else
+                                         <a href="#mod-login" role="button" class="login-switch text-font" title="" data-toggle="modal">
+                                            <span class="title-link">
+                                          Đăng nhập
+                                           
+                                        </span>
+                                    </a>
+                                     @endif  
                                     <div id="mod-login" class="modal hide fade" tabindex="-1" role="dialog" aria-hidden="true">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
@@ -36,7 +54,7 @@
                                         <div id="sj_login_box" class="show-box">
                                             <div class="sj_box_inner">
                                                 <div class="sj_box_title">
-                                                    <h3>Sign In</h3>
+                                                    <h3>Đăng nhâp</h3>
                                                 </div>
                                                 <div class="sj_box_content">
                                                     <form id="login_form" action="{{route('login')}}" method="post">

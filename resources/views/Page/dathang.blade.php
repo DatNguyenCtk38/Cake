@@ -138,7 +138,7 @@
 	<th align="left">Tên sản phẩm</th>
 	<th style="min-width:70px;width:5%;align:right;text-align:center" align="left">Hình ảnh</th>
 	<th style="min-width:70px;width:5%;align:right;text-align:center">Giá</th>
-	<th style="min-width:120px;width:10%;align:right;text-align:center">Số lượng		/ Update</th>
+	<th style="min-width:120px;width:10%;align:right;text-align:center">Số lượng		/ Xóa</th>
 
 
 		<th style="min-width:76px;width:5%;align:right;text-align:center"><span class="priceColor2">Thuế</span></th>
@@ -150,7 +150,7 @@
 
 	@foreach($product_cart as $cart)
 					<!-- end one item -->				
-	<tr valign="top" class="sectiontableentry1">
+	<tr id="row_{{$cart['item']['id']}}" valign="top" class="sectiontableentry1">
 
 	<input type="hidden" name="cartpos[]" value="0">
 	<td align="left">
@@ -169,12 +169,16 @@
         @endif ₫</span></div>        
         
 	</td>
-	<td align="right">
-		<input min="1" max="5" id="gh_sl_{{$cart['item']['id']}}" onchange="changecart({{$cart['item']['id']}},{{$cart['item']['unit_price']}})" type="number" title="Update Quantity In Cart" class="quantity-input js-recalculate" size="3"  name="quantity[0]" value="{{$cart['qty']}}">
+	<td align="center">
+		<input min="1" max="5" id="gh_sl_{{$cart['item']['id']}}" onchange="changecart({{$cart['item']['id']}},
+			@if ($cart['item']['promotion_price']==0)
+				{{$cart['item']['unit_price']}}
+			@else
+				{{$cart['item']['promotion_price']}}
+			@endif
 
-        <button type="submit" class="vmicon vm2-add_quantity_cart" name="updatecart.0" title="Update Quantity In Cart"><i class="fa fa-refresh"></i></button>
-
-			<button type="submit" class="vmicon vm2-remove_from_cart" name="delete.0" title="Delete Product From Cart"><i class="fa fa-trash-o"></i></button>
+		)" type="number" title="Update Quantity In Cart" class="quantity-input js-recalculate" size="3"  name="quantity[0]" value="{{$cart['qty']}}">
+			<a type="button" onclick="deletecart({{$cart['item']['id']}})" style="background-image: url('public/source/images/stories/virtuemart/product/icons8-Delete Bin-20.png');" type="submit" class="vmicon vm2-remove_from_cart" name="delete.0" title="Delete Product From Cart"><i class="fa fa-trash-o"></i></button>
 	</td>
 
 		<td align="right"><span class="priceColor2"></span>    </td>
@@ -186,11 +190,11 @@
 @endif
 	<!--Begin of SubTotal, Tax, Shipment, Coupon Discount and Total listing -->
 <tr class="sectiontableentry1">
-	<td colspan="4" align="right">Product prices result</td>
+	<td colspan="4" align="right">Tổng tiền</td>
 
 		<td align="right"><span class="priceColor2"></span></td>
 		<td align="right"><span class="priceColor2"></span></td>
-	<td align="right"><div class="PricesalesPrice vm-display vm-price-value"><span class="vm-price-desc"></span><span class="PricesalesPrice">94,38 €</span></div></td>
+	<td align="right"><div class="PricesalesPrice vm-display vm-price-value"><span class="vm-price-desc"></span><span id="totalPrice" class="PricesalesPrice">{{number_format($totalPrice)}} ₫</span></div></td>
 </tr>
 
 </tbody>

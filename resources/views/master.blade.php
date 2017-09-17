@@ -208,11 +208,37 @@ jQuery(function($) {
                     id : id
                 },
                 success: function (result) {
-                  console.log(result);
+                  //console.log(result);
                   var n = result.items[id]['price'];
                    n = n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                   $('.gio-hang-tb').html(" ("+ result.totalQty+")");
                   $('#gh_tt_'+id).html(n+"₫");
+                  var totalPrice = result.totalPrice;
+                   totalPrice = totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                  $('#totalPrice').html(totalPrice+"₫");
+                }
+            });
+        }
+   
+   </script>
+   <script type="text/javascript">
+        function deletecart(id) {
+           $.ajax({
+                url: "{{ route('DeleteCart') }}",
+                type: "get",
+                dataType: "json",
+                data: {
+                    sl : $('#gh_sl_'+id).val(),
+                    id:id,
+                },
+                success: function (result) {
+                  //console.log(result);
+                  $('.gio-hang-tb').html(" ("+ result.totalQty+")");
+                 
+                  var totalPrice = result.totalPrice;
+                   totalPrice = totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                  $('#totalPrice').html(totalPrice+"₫");
+                  $('#row_'+id).fadeOut(1000);                   
                 }
             });
         }

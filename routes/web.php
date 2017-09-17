@@ -87,6 +87,10 @@ Route::get('UpdateCart', [
 	'as'=>'UpdateCart',
 	'uses'=>'AjaxController@getUpdatecartajax'
 ]);
+Route::get('DeleteCart',[
+	'as'=>'DeleteCart',
+	'uses'=>'AjaxController@getDeletecartajax'
+]);
 //////////////admin
 Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
 
